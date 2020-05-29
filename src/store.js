@@ -12,7 +12,6 @@ export default new Vuex.Store({
   state: {
     board
   },
-
   getters: {
     getTask(state) {
       return id => {
@@ -26,6 +25,5 @@ export default new Vuex.Store({
       }
     }
   },
-
   mutations: {}
 })

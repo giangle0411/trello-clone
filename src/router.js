@@ -1,29 +1,25 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Router from 'vue-router'
 import Board from './views/Board.vue'
 import Task from './views/Task.vue'
 
-Vue.use(VueRouter)
+Vue.use(Router)
 
-const routes = [
-  {
-    path: '/',
-    name: 'board',
-    component: Board,
-    children: [
-      {
-        path: 'task/:id',
-        name: 'task',
-        component: Task
-      }
-    ]
-  }
-]
-
-const router = new VueRouter({
+export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes: [
+    {
+      path: '/',
+      name: 'board',
+      component: Board,
+      children: [
+        {
+          path: 'task/:id',
+          name: 'task',
+          component: Task
+        }
+      ]
+    }
+  ]
 })
-
-export default router
