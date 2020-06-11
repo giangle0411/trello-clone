@@ -66,4 +66,8 @@ export default {
   @apply pin absolute;
   background: rgba(0, 0, 0, 0.5);
 }
+.column {
+  @apply bg-grey-light p-2 mr-4 text-left shadow rounded;
+  min-width: 350px;
+}
 </style>

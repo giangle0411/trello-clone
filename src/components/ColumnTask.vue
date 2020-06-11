@@ -1,21 +1,23 @@
-<template>
-  <AppDrop @drop="moveTaskOrColumn">
-    <AppDrag
-      class="task"
-      :transferData="{
-        type: 'task',
-        fromColumnIndex: columnIndex,
-        fromTaskIndex: taskIndex
-      }"
-    >
-      <span class="w-full flex-no-shrink font-bold">
-        {{ task.name }}
-      </span>
-      <p v-if="task.description" class="w-full flex-no-shrink mt-1 text-sm">
-        {{ task.description }}
-      </p>
-    </AppDrag>
-  </AppDrop>
+<template >
+  <div @click="goToTask(task)">
+    <AppDrop @drop="moveTaskOrColumn">
+      <AppDrag
+        class="task"
+        :transferData="{
+          type: 'task',
+          fromColumnIndex: columnIndex,
+          fromTaskIndex: taskIndex
+        }"
+      >
+        <span class="w-full flex-no-shrink font-bold">
+          {{ task.name }}
+        </span>
+        <p v-if="task.description" class="w-full flex-no-shrink mt-1 text-sm">
+          {{ task.description }}
+        </p>
+      </AppDrag>
+    </AppDrop>
+  </div>
 </template>
 
 <script>
